@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://studio-nullbyte.github.io/sitemap.xml
+
+# Allow crawling of all content
+Disallow: 
+
+# Specific directives
+Allow: /products
+Allow: /about
+Allow: /contact
+
+# Cache-related files
+Disallow: /static/
+Disallow: /assets/js/
+Disallow: /assets/css/
+
+# Studio Nullbyte - Modular tools for the design-minded developer

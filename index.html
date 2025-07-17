@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Standard Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    
+    <!-- Android Chrome Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    
+    <!-- Safari Pinned Tab -->
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#8B5CF6" />
+    
+    <!-- Theme Colors -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-navbutton-color" content="#000000" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- PWA Settings -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-title" content="Studio Nullbyte" />
+    <meta name="application-name" content="Studio Nullbyte" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.paypal.com https://www.sandbox.paypal.com https://cdn.jsdelivr.net https://js.stripe.com https://client.crisp.chat;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://client.crisp.chat;
+      font-src 'self' https://fonts.gstatic.com https://client.crisp.chat;
+      img-src 'self' data: https: blob:;
+      connect-src 'self' https://*.supabase.co https://www.paypal.com https://www.sandbox.paypal.com https://api.stripe.com wss://client.relay.crisp.chat https://client.crisp.chat;
+      frame-src https://www.paypal.com https://www.sandbox.paypal.com https://js.stripe.com;
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+    ">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Modular tools for the design-minded developer. Clean. Branded. Ready to deploy." />
+    <meta name="keywords" content="templates, web templates, notion templates, AI prompts, developer tools, freelancers, design tools, react templates, typescript templates, ui components, digital products" />
+    <meta name="author" content="Studio Nullbyte" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="language" content="en" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://studio-nullbyte.github.io/" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Studio Nullbyte - Modular Design Tools" />
+    <meta property="og:description" content="Modular tools for the design-minded developer. Clean. Branded. Ready to deploy." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://studio-nullbyte.github.io" />
+    <meta property="og:image" content="https://studio-nullbyte.github.io/android-chrome-512x512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:site_name" content="Studio Nullbyte" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Studio Nullbyte - Modular Design Tools" />
+    <meta name="twitter:description" content="Modular tools for the design-minded developer. Clean. Branded. Ready to deploy." />
+    <meta name="twitter:image" content="https://studio-nullbyte.github.io/android-chrome-512x512.png" />
+    <meta name="twitter:site" content="@studionullbyte" />
+    <meta name="twitter:creator" content="@studionullbyte" />
+    
+    <!-- Article/Business Info -->
+    <meta property="article:publisher" content="https://studio-nullbyte.github.io" />
+    <meta property="business:contact_data:street_address" content="Remote" />
+    <meta property="business:contact_data:locality" content="Global" />
+    <meta property="business:contact_data:email" content="studionullbyte@gmail.com" />
+    <meta property="business:contact_data:website" content="https://studio-nullbyte.github.io" />
+    
+    <title>Studio Nullbyte - Modular Design Tools</title>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Studio Nullbyte",
+      "url": "https://studio-nullbyte.github.io",
+      "logo": "https://studio-nullbyte.github.io/apple-touch-icon.png",
+      "description": "Modular tools for the design-minded developer. Clean. Branded. Ready to deploy.",
+      "sameAs": [
+        "https://github.com/Studio-Nullbyte"
+      ],
+      "contactPoint": {
+        "telephone": "+1-555-NULLBYTE",
+        "contactType": "customer service",
+        "email": "studionullbyte@gmail.com"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Studio Nullbyte",
+      "url": "https://studio-nullbyte.github.io",
+      "description": "Modular tools for the design-minded developer. Clean. Branded. Ready to deploy.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Studio Nullbyte"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://studio-nullbyte.github.io/products?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://js.stripe.com" />
+    <link rel="dns-prefetch" href="https://client.crisp.chat" />
+    <style>
+      /* Loading screen styles */
+      #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        font-family: 'IBM Plex Mono', monospace;
+        color: #8B5CF6;
+        font-size: 18px;
+      }
+      
+      .loader-text {
+        position: relative;
+      }
+      
+      .loader-text::after {
+        content: '_';
+        animation: blink 1s linear infinite;
+      }
+      
+      @keyframes blink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+      }
+      
+      .fade-out {
+        opacity: 0;
+        transition: opacity 0.8s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loading-screen">
+      <div class="loader-text">Nullbyte</div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Remove loading screen after a delay
+      setTimeout(() => {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+          loadingScreen.classList.add('fade-out');
+          setTimeout(() => {
+            loadingScreen.remove();
+          }, 800);
+        }
+      }, 2000);
+    </script>
+  </body>
+</html>

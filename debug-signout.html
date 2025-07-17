@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Out Debug Test</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            color: #8B5CF6;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .debug-box {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .error {
+            color: #ff6b6b;
+        }
+        .success {
+            color: #51cf66;
+        }
+        .warning {
+            color: #ffd43b;
+        }
+        button {
+            background: #8B5CF6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            margin: 10px 0;
+        }
+        button:hover {
+            background: #7c3aed;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Sign Out Debug Test</h1>
+    
+    <div class="debug-box">
+        <h2>Environment Check</h2>
+        <div id="env-check">Loading...</div>
+    </div>
+    
+    <div class="debug-box">
+        <h2>Storage Check</h2>
+        <div id="storage-check">Loading...</div>
+    </div>
+    
+    <div class="debug-box">
+        <h2>Actions</h2>
+        <button onclick="clearAllStorage()">Clear All Storage</button>
+        <button onclick="checkEnvironment()">Recheck Environment</button>
+        <button onclick="window.location.reload()">Refresh Page</button>
+    </div>
+    
+    <div class="debug-box">
+        <h2>Instructions</h2>
+        <ol>
+            <li>Check if Supabase environment variables are properly set</li>
+            <li>If not, update your .env file with real Supabase credentials</li>
+            <li>Restart your development server</li>
+            <li>Test the sign out functionality</li>
+        </ol>
+    </div>
+
+    <script>
+        function checkEnvironment() {
+            const envCheck = document.getElementById('env-check');
+            const results = [];
+            
+            // Check for Vite environment variables
+            const supabaseUrl = import.meta?.env?.VITE_SUPABASE_URL;
+            const supabaseKey = import.meta?.env?.VITE_SUPABASE_ANON_KEY;
+            
+            if (supabaseUrl) {
+                if (supabaseUrl.includes('your_supabase') || supabaseUrl.includes('placeholder')) {
+                    results.push(`<div class="error">❌ VITE_SUPABASE_URL is set to placeholder value</div>`);
+                } else {
+                    results.push(`<div class="success">✅ VITE_SUPABASE_URL is configured</div>`);
+                }
+            } else {
+                results.push(`<div class="error">❌ VITE_SUPABASE_URL is missing</div>`);
+            }
+            
+            if (supabaseKey) {
+                if (supabaseKey.includes('your_supabase') || supabaseKey.includes('placeholder')) {
+                    results.push(`<div class="error">❌ VITE_SUPABASE_ANON_KEY is set to placeholder value</div>`);
+                } else {
+                    results.push(`<div class="success">✅ VITE_SUPABASE_ANON_KEY is configured</div>`);
+                }
+            } else {
+                results.push(`<div class="error">❌ VITE_SUPABASE_ANON_KEY is missing</div>`);
+            }
+            
+            envCheck.innerHTML = results.join('');
+        }
+        
+        function checkStorage() {
+            const storageCheck = document.getElementById('storage-check');
+            const results = [];
+            
+            // Check localStorage
+            const localStorageItems = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key && (key.includes('supabase') || key.includes('auth') || key.includes('remember'))) {
+                    localStorageItems.push(key);
+                }
+            }
+            
+            if (localStorageItems.length > 0) {
+                results.push(`<div class="warning">⚠️ Auth-related localStorage items: ${localStorageItems.join(', ')}</div>`);
+            } else {
+                results.push(`<div class="success">✅ No auth-related localStorage items</div>`);
+            }
+            
+            // Check sessionStorage
+            const sessionStorageItems = [];
+            for (let i = 0; i < sessionStorage.length; i++) {
+                const key = sessionStorage.key(i);
+                if (key && (key.includes('supabase') || key.includes('auth') || key.includes('temp'))) {
+                    sessionStorageItems.push(key);
+                }
+            }
+            
+            if (sessionStorageItems.length > 0) {
+                results.push(`<div class="warning">⚠️ Auth-related sessionStorage items: ${sessionStorageItems.join(', ')}</div>`);
+            } else {
+                results.push(`<div class="success">✅ No auth-related sessionStorage items</div>`);
+            }
+            
+            storageCheck.innerHTML = results.join('');
+        }
+        
+        function clearAllStorage() {
+            try {
+                localStorage.clear();
+                sessionStorage.clear();
+                alert('All storage cleared successfully!');
+                checkStorage();
+            } catch (error) {
+                alert('Failed to clear storage: ' + error.message);
+            }
+        }
+        
+        // Run checks on page load
+        checkEnvironment();
+        checkStorage();
+    </script>
+</body>
+</html>

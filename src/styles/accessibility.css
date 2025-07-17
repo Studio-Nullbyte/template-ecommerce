@@ -1,0 +1,84 @@
+/* Accessibility-specific CSS enhancements */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --electric-violet: #FFFFFF;
+    --code-gray: #000000;
+    --code-gray-dark: #000000;
+  }
+  
+  .btn-primary {
+    border: 2px solid currentColor;
+  }
+  
+  .btn-secondary {
+    border: 2px solid currentColor;
+  }
+  
+  .card {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus visible for better keyboard navigation */
+:focus-visible {
+  outline: 4px solid #8B5CF6;
+  outline-offset: 2px;
+}
+
+/* Ensure sufficient color contrast for all text */
+.text-gray-400 {
+  color: #9CA3AF; /* Adjusted for AA compliance */
+}
+
+.text-gray-500 {
+  color: #6B7280; /* Adjusted for AA compliance */
+}
+
+/* Better focus indicators for interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 4px solid #8B5CF6;
+  outline-offset: 2px;
+}
+
+/* Print styles for accessibility */
+@media print {
+  .skip-link,
+  .sr-only {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+  }
+  
+  /* Ensure links are distinguishable in print */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+  }
+  
+  /* Hide decorative elements in print */
+  .bg-grid-pattern,
+  .cursor-blink {
+    display: none !important;
+  }
+}
