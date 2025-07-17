@@ -1,0 +1,10 @@
+<svg width="32" height="32" viewBox="0 0 475 475" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="475" height="475" fill="#2D2D2D"/>
+  <!-- N -->
+  <rect x="147" y="118" width="32" height="118" fill="#FFFFFF"/>
+  <polygon points="179,118 179,150 211,150 211,182 243,182 243,214 275,214 275,246 307,246 307,278 307,310 275,310 275,236 243,236 243,204 211,204 211,172 179,172" fill="#FFFFFF"/>
+  <rect x="307" y="118" width="32" height="118" fill="#FFFFFF"/>
+  
+  <!-- Underscore -->
+  <rect x="342" y="310" width="64" height="16" fill="#FFFFFF"/>
+</svg>

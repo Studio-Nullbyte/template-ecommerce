@@ -1,0 +1,22 @@
+# Prettier ignore patterns
+node_modules/
+dist/
+build/
+public/
+.env*
+*.min.js
+*.min.css
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+*.log
+.git/
+.github/
+.vscode/
+coverage/
+.next/
+.nuxt/
+.output/
+.vercel/
+.netlify/
+storybook-static/
